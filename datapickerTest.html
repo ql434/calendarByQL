@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>datapickerTest</title>
+		<meta name="description" content="">
+		<meta name="author" content="kunqian">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" style="test/css" href="sohuAD.calendar.css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<style>
+			.red {
+				background-color: red;
+			}
+			.blue {
+				background-color: blue;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>datapickerTest</h1>
+			</header>
+			<input type="text" id="in1"/>
+			<div id="calendardiv">
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by kunqian
+				</p>
+			</footer>
+		</div>
+		<script src="sohuAD.Calendar.js"></script>
+		<script>
+			function showDw() {
+				calendar = null;
+				if (calendar == null) {
+					calendar = new sohuAD.Calendar('calendardiv', {
+						checkModel : 'checkbox',
+						/*	url : bookjsonurl,*/
+						cellMinHeight : '40px',
+						bookPackageId : 1,
+						showElmID : "in1"
+
+					});
+				}
+				if (calendar.isShow() == false) {
+					calendar.render();
+				}
+			}
+
+			showDw();
+		</script>
+	</body>
+</html>
